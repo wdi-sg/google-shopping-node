@@ -1,18 +1,59 @@
 // use require to get the json file data
+const mainData = require('../products.json');
 
-/*
- * example function called getItemsCount
- * input: accepts full item data
- * output: returns the length of the items array
- */
-function getItemsCount(itemData) {
-  return itemData.items.length;
-}
+const productData = mainData;
 
-/*
- * Define and use your functions here
- */
+function getItems(data){
+  return data.items;
+};
+const itemsInData = getItems(productData)
+//console.log(itemsInData)
+///////////////////////////////////////////////////////////////////////////////////////////
 
-// output item count using the getItemsCount function
-var data = {}; // replace this line with the data from the require statement
-console.log('Item Count: ' + getItemsCount(data));
+function getItemsCount(items) {
+  return items.length;
+};
+const itemsCount = getItemsCount(itemsInData);
+//console.log('Item Count: ' + itemsCount);
+///////////////////////////////////////////////////////////////////////////////////////////
+
+function getItemsByBrand(dataitems, brand){
+    dataitems.forEach(function(item) {
+        if(item["product"]["brand"].toLowerCase() === brand.toLowerCase()) {
+            console.log(item)
+            // return item
+    }})
+};
+
+//console.log(getItemsByBrand(getItems(productData), process.argv[2]))
+//console.log(sonyItems)
+///////////////////////////////////////////////////////////////////////////////////////////
+
+function getItemsByAuthor(dataitems, author){
+    dataitems.forEach(function(index) {
+        if(index["product"]["author"]["name"].includes(author)) {
+
+            console.log(item)
+    }})
+};
+console.log(getItemsByAuthor(getItems(productData), process.argv[2]))
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+function getAvailableProducts(items){
+    items.forEach(function(index) {
+        if(index["product"]["inventories"][0]["availability"] === "inStock") {
+         console.log(index)
+    }})
+};
+
+
+
+//
+// const itemsByAuthor = getItemsByAuthor(itemsInData, "Adorama Camera");
+// const availableProducts = getAvailableProducts(itemsInData);
+// console.log(getItems(productData))
+
+
+
+// console.log(getAvailableProducts(getItems(productData)))
