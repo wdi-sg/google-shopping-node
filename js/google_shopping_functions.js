@@ -65,8 +65,8 @@ console.log(adorama);
 
 var nikonItems = getItemsByBrand(items, "Nikon");
 console.log(nikonItems);
-var availableNikon = getAvailableProducts(nikonItems);
-console.log(availableNikon);
+var ebayNikon = getItemsByAuthor(nikonItems, "eBay");
+console.log(ebayNikon);
 
 
 
