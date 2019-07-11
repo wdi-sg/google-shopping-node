@@ -2,7 +2,9 @@
 
 Using the google shoping data used before (also included in this repository) create some useful functions to answer the following questions.
 
-**REMEMBER:** data should be passed in to the function as arguments and out as a return value. DO NOT access/modify variables defined outside of the function.
+**REMEMBER:** All functions should take input (data passed into the function as arguments) and give output (using the return keyword).
+
+Functions SHOULD NOT access/modify variables defined outside of the function.
 
 ## Getting Started
 
