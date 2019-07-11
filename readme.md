@@ -114,6 +114,7 @@ Let the user enter in a maximum or minimum price. Only show them items that corr
 ## Further
 
 Let the user enter in a maximum *and* minimum price. Only show them items that correspond.
+
 ---
 
 ## Licensing
