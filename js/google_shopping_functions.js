@@ -23,7 +23,6 @@ function getItems () {
 }
 // getItems();
 
-
 //Part 2
 function getItemsByBrand (item, brand) {
     var brandArray = [];
@@ -66,42 +65,56 @@ function getAvailableProducts (item) {
 
 // getAvailableProducts();
 
-
-//Part 5
+// //Part 5
 var items = getItems();
 
-// //All items made by Sony.
-var sonyItems = getItemsByBrand(items, 'Sony');
-console.log("items by sony listed below");
-console.log(sonyItems);
-console.log("End of Sony items array");
+// // //All items made by Sony.
+// var sonyItems = getItemsByBrand(items, 'Sony');
+// console.log("items by sony listed below");
+// console.log(sonyItems);
+// console.log("End of Sony items array");
 
-// //All items made by Sony that are available.
-var availableSonyItems = getAvailableProducts(sonyItems);
-console.log("available sony items listed below");
-console.log(availableSonyItems);
-console.log("End of available Sony items array");
+// // //All items made by Sony that are available.
+// var availableSonyItems = getAvailableProducts(sonyItems);
+// console.log("available sony items listed below");
+// console.log(availableSonyItems);
+// console.log("End of available Sony items array");
 
-//All available items by the author "Adorama Camera"
-var adoramaCameraItems = getItemsByAuthor(items, 'Adorama Camera');
-// console.log("items by author Adorama Camera listed below");
-// console.log(adoramaCameraItems);
+// //All available items by the author "Adorama Camera"
+// var adoramaCameraItems = getItemsByAuthor(items, 'Adorama Camera');
+// // console.log("items by author Adorama Camera listed below");
+// // console.log(adoramaCameraItems);
 
-var availableAdorama = getAvailableProducts(adoramaCameraItems);
-console.log("available items by author Adorama Camera listed below");
-console.log(availableAdorama);
-console.log("End of available Adorama items array");
+// var availableAdorama = getAvailableProducts(adoramaCameraItems);
+// console.log("available items by author Adorama Camera listed below");
+// console.log(availableAdorama);
+// console.log("End of available Adorama items array");
 
 
-//All items made by Nikon.
-var nikonItems = getItemsByBrand(items, 'Nikon');
-// console.log("items by Nikon listed below");
-// console.log(nikonItems);
-// All items made by Nikon with the author eBay.
-var nikonEbay = getItemsByAuthor(nikonItems,'eBay');
-console.log("nikon items by eBay listed below");
-console.log(nikonEbay);
-console.log("End of nikon by ebay items array");
+// //All items made by Nikon.
+// var nikonItems = getItemsByBrand(items, 'Nikon');
+// // console.log("items by Nikon listed below");
+// // console.log(nikonItems);
+// // All items made by Nikon with the author eBay.
+// var nikonEbay = getItemsByAuthor(nikonItems,'eBay');
+// console.log("nikon items by eBay listed below");
+// console.log(nikonEbay);
+// console.log("End of nikon by ebay items array");
+
+
+//Further
+//Give the ability for the user to give the search term in the terminal:
+//Get the process.argv[2] user input and use it as the search term input to your getItemsByBrand function.
+
+process.argv[2] = getItemsByBrand(items, process.argv[2]);
+
+if (process.argv[2].length === 0) {
+    console.log("No results were found");
+} else {
+    console.log(process.argv[2]);
+}
+
+
 
 
 
