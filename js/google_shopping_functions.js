@@ -102,19 +102,36 @@ var items = getItems();
 // console.log("End of nikon by ebay items array");
 
 
-//Further
-//Give the ability for the user to give the search term in the terminal:
-//Get the process.argv[2] user input and use it as the search term input to your getItemsByBrand function.
+// //Further
+// //Give the ability for the user to give the search term in the terminal:
+// //Get the process.argv[2] user input and use it as the search term input to your getItemsByBrand function.
+// //If no results were found, let the user know.
 
-process.argv[2] = getItemsByBrand(items, process.argv[2]);
+// process.argv[2] = getItemsByBrand(items, process.argv[2]);
 
-if (process.argv[2].length === 0) {
-    console.log("No results were found");
-} else {
-    console.log(process.argv[2]);
+// if (process.argv[2].length === 0) {
+//     console.log("No results were found");
+// } else {
+//     console.log(process.argv[2]);
+// }
+
+
+//Ask the user if they want to do or see the following things, then do that thing based on what the user entered:
+if (process.argv.length === 2) {
+console.log(`What would you like to search\n\n1. The number of product items\n\n2. The country of each item\n\n3. Total price of all inventory\n\n4. Search for one of the things above`)
+} else if (parseInt(process.argv[2]) === 1) {
+    console.log(`The number of items is ${items.length}`);
+} else if (parseInt(process.argv[2]) === 2) {
+    for (i=0; i<items.length; i++) {
+        console.log(`${items[i].product.title} is from ${items[i].product.country}`);
+    }
+}else if (parseInt(process.argv[2]) === 3) {
+    var totalPrice = 0;
+    for (i=0; i<items.length; i++) {
+        totalPrice = items[i].product.inventories[0].price + totalPrice;
+    }
+    console.log(`Total price of inventories is ${totalPrice.toFixed(2)} USD`);
 }
-
-
 
 
 
