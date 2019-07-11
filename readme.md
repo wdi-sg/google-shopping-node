@@ -76,10 +76,44 @@ console.log(getItemsByBrand(getItems(data), 'Cannon'));
 ```
 
 
-## Bonus
+## Further
+Give the ability for the user to give the search term in the terminal:
 
-Create another search function and/or think of other interesting ways to combine the functions to perform useful searches.
 
+```bash
+node js/google_shopping_functions.js Nikon
+```
+
+Get the `process.argv[2]` user input and use it as the search term input to your `getItemsByBrand` function.
+
+## Further
+If no results were found, let the user know.
+
+## Further
+
+Ask the user if they want to do or see the following things, then do that thing based on what the user entered:
+
+1) The number of product items
+
+2) The country of each item
+
+3) Total price of all inventory
+
+4) Search for one of the things above
+
+An example command could be:
+
+```bash
+node js/google_shopping_functions.js searchByBrand Nikon
+```
+
+## Further
+
+Let the user enter in a maximum or minimum price. Only show them items that correspond.
+
+## Further
+
+Let the user enter in a maximum *and* minimum price. Only show them items that correspond.
 ---
 
 ## Licensing
