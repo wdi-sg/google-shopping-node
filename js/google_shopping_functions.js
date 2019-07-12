@@ -87,3 +87,16 @@ var getBrandInStock = function(products, brand){
 };
 
 getBrandInStock(products, "Sony");
+
+var getBrandByAuthor = function(brand, author) {
+  var brandByAuthor = [];
+  for(var i = 0; i < products.items.length; i++) {
+    if (products.items[i].product.author.name.includes(author) && brand === products.items[i].product.brand) {
+      brandByAuthor.push(products.items[i].product.title);
+    }
+  }
+  console.log(brand + " by " + author + " " + brandByAuthor);
+  return brandByAuthor;
+};
+
+getBrandByAuthor("Nikon", "eBay");
