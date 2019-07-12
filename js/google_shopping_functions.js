@@ -64,47 +64,47 @@ console.log("Items made by Nikon with the author eBay: " + getItemsByBrand(googl
 
 
 
-// var searchFunctions = {
-//   getItems: function(data){
-//     return data;
-//   },
-//   getItemsByBrand: function(input){
-//     var arrayList = [];
-//     for (var i = 0; i < data.items.length; i++){
-//       if (data.items[i].product.brand === input){
-//          arrayList.push (data.items[i].product.title);
-//       }
-//     }
-//     return arrayList;
-//   },
-//   getItemsByAuthor: function(input){
-//     var arrayList = [];
-//     for (var i = 0; i < data.items.length; i++){
-//       if (data.items[i].product.author.name.includes(input)){
-//         arrayList.push (data.items[i].product.title);
-//       }
-//     }
-//     return arrayList;
-//   },
-//   getAvailableProducts: function(input){
-//     var arrayList = [];
-//     if (input === undefined){
-//       for (var i = 0; i < data.items.length; i++){
-//         if (data.items[i].product.inventories[0].availability === "inStock"){
-//           arrayList.push (data.items[i].product.title);
-//         }
-//       }
-//     }else {
-//       for (var i = 0; i < data.items.length; i++){
-//         if (data.items[i].product.brand === input && data.items[i].product.inventories[0].availability === "inStock"){
-//           arrayList.push (data.items[i].product.title);
-//         }
-//       }
-//     }
-//     return arrayList;
-//   }
-// }
+var searchFunctions = {
+  getItems: function(data){
+    return data;
+  },
+  getItemsByBrand: function(input){
+    var arrayList = [];
+    for (var i = 0; i < data.items.length; i++){
+      if (data.items[i].product.brand === input){
+         arrayList.push (data.items[i].product.title);
+      }
+    }
+    return arrayList;
+  },
+  getItemsByAuthor: function(input){
+    var arrayList = [];
+    for (var i = 0; i < data.items.length; i++){
+      if (data.items[i].product.author.name.includes(input)){
+        arrayList.push (data.items[i].product.title);
+      }
+    }
+    return arrayList;
+  },
+  getAvailableProducts: function(input1, input2){
+    var arrayList = [];
+    if (input1 === undefined && input2 === undefined){
+      console.log("no input detected")
+      for (var i = 0; i < data.items.length; i++){
+        if (data.items[i].product.inventories[0].availability === "inStock"){
+          arrayList.push (data.items[i].product.title);
+        }
+      }
+    }else {
+      for (var i = 0; i < data.items.length; i++){
+        if (data.items[i].product.brand.includes(input1) && data.items[i].product.inventories[0].availability === "inStock"){
+          arrayList.push (data.items[i].product.title);
+        }
+      }
+    }
+    return arrayList;
+  }
+}
 
-// if (process.argv[2] || process.argv[3]){
-  // console.log(searchFunctions[process.argv[2]] (process.argv[3]) );
-// }
+
+console.log(searchFunctions[process.argv[2]] (process.argv[3],process.argv[4]) );
