@@ -29,7 +29,7 @@ var byBrand = getItemsByBrand(allItems, 'Sony');
 var getItemsByAuthor = function(items, authorName) {
     var authorItems = [];
     for (var i = 0; i < items.length; i++){
-        if (items[i].product.author.name.includes(authorName)){
+        if (items[i].product.author.name.includes(authorName){
             authorItems.push(items[i]);
         }
     }
@@ -37,14 +37,20 @@ var getItemsByAuthor = function(items, authorName) {
 };
 
 // var allItems = getItems(everything);
-console.log(getItemsByAuthor(allItems, 'eBay'));
+// console.log(getItemsByAuthor(allItems, 'eBay'));
 
 
 // 4. getAvailableProducts(items)
-
-
-
-
+var getItemsInStock =function (itemsSony) {
+    var inStock = [];
+    for (var i = 0; i < itemsSony.length; i++ ) {
+        if (itemsSony[i].product.inventories[0].availability === 'inStock' ) {
+            inStock.push(itemsSony[i].product.title);
+        }
+    }
+    return inStock;
+    console.log(inStock);
+}
 
 
 
@@ -64,6 +70,8 @@ console.log(getItemsByAuthor(allItems, 'eBay'));
 /*
  * Define and use your functions here
  */
+
+////////////////////////////////////////////////
 
 // output item count using the getItemsCount function
 // var data = {}; // replace this line with the data from the require statement
