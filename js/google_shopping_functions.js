@@ -106,5 +106,6 @@ var searchFunctions = {
   }
 }
 
-
-console.log(searchFunctions[process.argv[2]] (process.argv[3],process.argv[4]) );
+if (process.argv[2] != undefined){
+    console.log(searchFunctions[process.argv[2]] (process.argv[3],process.argv[4]) );
+}
