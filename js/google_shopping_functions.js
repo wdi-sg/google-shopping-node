@@ -52,10 +52,10 @@ const getItemsByBrand = function(items, brand){
 getItemsByBrand(items, input);
 
 if (brands.length > 0) {
-    // console.log(brands);
+    console.log(brands);
 }
 else {
-    // console.log("no item found");
+    console.log("no item found");
 }
 
 // =====================================================================================
