@@ -46,17 +46,33 @@ let product = getItems(object);
 
 //argv[2] will be use for inputing of values later on
 
-let author = process.argv[2];
+// let author = process.argv[2];
 // empty array to store title of brands
-let titleOfBook =[];
+// let titleOfBook =[];
 
-const getItemsByAuthor = (product, author) => {
+// const getItemsByAuthor = (product, author) => {
+//     for (var i = 0; i < product.length; i++) {
+//         if (product[i].author.name === author) {
+//             titleOfBook.push(product[i].title)
+//         }
+//     }
+//     return titleOfBook;
+// };
+
+// console.log(getItemsByAuthor(product, author))
+
+
+//part 4 create function that has at least one availability stock
+
+
+const getAvailableProducts =(product) => {
+    let inStockItem =[];
     for (var i = 0; i < product.length; i++) {
-        if (product[i].author.name === author) {
-            titleOfBook.push(product[i].title)
+        if (product[i].inventories[0].availability === "inStock") {
+            inStockItem.push(product[i].title)
         }
     }
-    return titleOfBook;
-}
+    return inStockItem;
+};
 
-console.log(getItemsByAuthor(product, author))
+console.log(getAvailableProducts(product));
