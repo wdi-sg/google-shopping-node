@@ -1,5 +1,12 @@
 // use require to get the json file data
 
+//try {
+  //Check if file exists
+  var data = require("../products.json");
+//} catch (err) {
+//  console.log("Please input correct file. " + err);
+//  return;
+//}
 /*
  * example function called getItemsCount
  * input: accepts full item data
@@ -48,13 +55,6 @@ function getAvailableProducts(items) {
   return itemArr;
 }
 
-//try {
-  //Check if file exists
-  var data = require("../products.json");
-//} catch (err) {
-//  console.log("Please input correct file. " + err);
-//  return;
-//}
 var items = getItems(data);
 var sonyItems = getItemsByBrand(items, "Sony");
 var availableSonyItems = getAvailableProducts(sonyItems);
@@ -64,6 +64,7 @@ var nikonItems = getItemsByBrand(items, "Nikon");
 var ebayNikon = getItemsByAuthor(nikonItems, "eBay");
 
 var userTaskSelected = process.argv[2];
+
 if (userTaskSelected === "searchByBrand"){
     var userBrandInput = process.argv[3];
     var itemsFound = getItemsByBrand(items, userBrandInput);
@@ -74,8 +75,6 @@ if (userTaskSelected === "searchByBrand"){
       console.log(itemsFound);
     }
 }
-
-
 
 ////For Debugging
 //// output item count using the getItemsCount function
