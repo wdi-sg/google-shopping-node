@@ -1,18 +1,28 @@
-// use require to get the json file data
+const getData = require ("../products.json")
 
-/*
- * example function called getItemsCount
- * input: accepts full item data
- * output: returns the length of the items array
- */
-function getItemsCount(itemData) {
-  return itemData.items.length;
+var getItems = function (data) {
+    return data.items;
 }
+// console.log(getItems(getData));
+var items = getItems(getData);
 
-/*
- * Define and use your functions here
- */
-
-// output item count using the getItemsCount function
-var data = {}; // replace this line with the data from the require statement
-console.log('Item Count: ' + getItemsCount(data));
+var getItemsByBrand = function (items,brand) {
+    let array = [];
+    for (i=0; i<items.length; i++){
+        if(items[i].product.brand===brand){
+            array.push(items[i]);
+        }
+    }
+    return array;
+}
+// console.log(getItemsByBrand(items,"Sony"));
+var getItemsByAuthor = function (items,author) {
+    let array = [];
+    for (i=0; i<items.length; i++){
+        if(items[i].product.author.name===author){
+            array.push(items[i]);
+        }
+    }
+    return array;
+}
+// console.log(getItemsByAuthor(items,"eBay"));
